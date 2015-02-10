@@ -31,16 +31,7 @@ import ddf.minim.ugens.*;
 import ddf.minim.effects.*;
 
 //Create a variable to store the instance of MINIM
-Minim minim;
-//Create a variable that will store the song file
-AudioPlayer song;
-//Create beat related variables to store datas that will detect when a beat happen
-// for the kick, snare and hat in FREQ_ENERGY mode
-BeatDetect beat;
-//BeatListener variable to track the beats so that we don't miss any.
-BeatListener bl;
-//MetaData variable to store the datas related to the song file.
-AudioMetaData meta;
+
 
 //Create ArrayLists that will store the different objects.
 ArrayList ballsKick = new ArrayList();
@@ -65,13 +56,13 @@ boolean mouseKnob=false;
 ControlP5 cp5;
 
 
-void setup() {
-  //The P3D mode seems to force the Processing file to run on openGL and the graphic card, 
-  //giving more performances to display the sketch.
-  size(1280, 720, P3D);
-  background(0);
-  //Force the sketch to run at 60FPS, just in case...
-  frameRate(60);
+//void setup() {
+//  //The P3D mode seems to force the Processing file to run on openGL and the graphic card, 
+//  //giving more performances to display the sketch.
+//  size(1280, 720, P3D);
+//  background(0);
+//  //Force the sketch to run at 60FPS, just in case...
+//  frameRate(60);
 
   //Always starting MINIM before doing anything with it
   //Launching minim instance
@@ -98,8 +89,7 @@ void setup() {
   meta = song.getMetaData();
 
   //Loading the font Helvetica.
-  textFont( loadFont("Helvetica-48.vlw"), 16 );
-}
+  
 
 void draw() {
   //Default background and stroke.
